@@ -7,15 +7,15 @@ export default function LandingPage() {
 
     <div className="container">
         <div className="containerItem sideBar">
-            <div className="allPostsDiv ">
+            <div className="buttonsDivSidebar ">
                 <Link className="button" to="/allposts">Get all Posts</Link>
             </div>
-            <div className="ratingsDiv ">
+            <div className="buttonsDivSidebar ">
                 <Link className="button" to="/ratingposts">Get Rankings</Link>
             </div>
 
         </div>
-        <div className="containerItem mainContent">Main Content</div>
+        <div className="containerItem mainContent"><h1>Main Content</h1></div>
     </div>
   );
 }
