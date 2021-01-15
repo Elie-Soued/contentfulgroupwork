@@ -6,7 +6,7 @@ import Card from "../Card";
 export default function AllPosts() {
   let [pictures, setPictures] = useState([]);
 
-  let testArray = ['1', '2', '3'];
+  let testArray = ["1", "2", "3"];
 
   useEffect(() => {
     axios
@@ -17,15 +17,14 @@ export default function AllPosts() {
         const myArray = response.data.items;
         console.log(response.data.items);
         setPictures(response.data.items);
-
-
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  {/*
+  {
+    /*
 
 useEffect(() => {
     const fetchAllPosts = async () => {
@@ -41,34 +40,34 @@ useEffect(() => {
 
   console.log(posts);
 
-*/}
-
+*/
+  }
 
   return (
-    <div className='container'>
-      <div className='containerItem sideBar'>
-        <div className='buttonsDivSidebar'>
-          <Link className='button' to='/'>
+    <div className="container">
+      <div className="containerItem sideBar">
+        <div className="buttonsDivSidebar">
+          <Link className="button" to="/">
             Get me Home
           </Link>
         </div>
-        <div className='buttonsDivSidebar'>
-          <Link className='button' to='/ratingposts'>
+        <div className="buttonsDivSidebar">
+          <Link className="button" to="/ratingposts">
             Get me Ratings
           </Link>
         </div>
-        <div className='buttonsDivSidebar'>
-          <Link className='button' to='/allposts'>
+        <div className="buttonsDivSidebar">
+          <Link className="button" to="/allposts">
             Get all posts
           </Link>
         </div>
       </div>
-      <div className='containerItem mainContent'>
+      <div className="containerItem mainContent">
         {pictures.map((iteration, index) => {
           return (
             <div key={index}>
-               { console.log(iteration)}
-                <Card url={iteration.fields.imageurl} />
+              {console.log(iteration)}
+              <Card url={iteration.fields.imageurl} />
             </div>
           );
         })}
