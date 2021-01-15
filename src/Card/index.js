@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-export default function Card() {
+export default function Card({url}) {
+
+
+
   return (
     <div className="card">
       <div className="image">
-        <img src="https://picsum.photos/500/600" />
+        <img src={url} />
       </div>
       <div className="details">
         <span className="favorite">
