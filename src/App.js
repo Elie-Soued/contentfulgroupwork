@@ -1,22 +1,25 @@
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import axios from "axios";
+
+import AllPosts from "./views/AllPosts.js";
+import RatingPosts from "./views/RatingPosts.js";
+import LandingPage from "./views/LandingPage.js";
 
 function App() {
   return (
     <div className='App wrapper'>
-      <div className='sideBar wrapperItem'>
-        <div className='divLinkAllPost'>
-          <Link className="toBecomeButton" to='/allposts'>All Post Links</Link>{" "}
-        </div>
-        <div className='divLinkRating'>
-          {" "}
-          <Link className="toBecomeButton" to='/bestratedposts'>All Post Links</Link>
-        </div>
-      </div>
-      <div className='mainContent wrapperItem'>
-        <h1>Welcome to Main Content</h1>
-      </div>
+
+      <Switch>
+        <Route path='/allposts'>
+          <AllPosts />
+        </Route>
+        <Route path='/ratingposts'>
+          <RatingPosts />
+        </Route>
+        <Route path='/'>
+          <LandingPage />
+        </Route>
+      </Switch>
     </div>
   );
 }
