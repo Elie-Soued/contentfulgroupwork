@@ -15,6 +15,11 @@ export default function AllPosts () {
             Get me Ratings
           </Link>
         </div>
+        <div className='buttonsDivSidebar'>
+          <Link className='button' to='/allposts'>
+            Get all posts
+          </Link>
+        </div>
       </div>
       <div className='containerItem mainContent'>
         <h1>Posts Content</h1>
