@@ -8,11 +8,15 @@ import LandingPage from "./views/LandingPage.js";
 function App() {
   return (
     <div className='App wrapper'>
-      {/*skeleton api call get*/}
-      {axios
+      {/*skeleton api call get
+
+
+        {axios
         .get()
         .then(() => {})
         .catch(() => {})}
+      */}
+
       <Switch>
         <Route path='/allposts'>
           <AllPosts />
