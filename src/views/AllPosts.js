@@ -60,10 +60,19 @@ useEffect(() => {
       </div>
       <div className="mainContent">
         {pictures.map((iteration, index) => {
+          console.log(iteration.fields);
           return (
             <div key={index}>
-              {console.log(iteration)}
-              <Card url={iteration.fields.imageurl} />
+              <Card
+                title={iteration.fields.title}
+                description={iteration.fields.description}
+                userInfo={iteration.fields.user}
+                rating={iteration.fields.rating}
+                imageurl={iteration.fields.imageurl}
+                username
+                email
+                profilepic
+              />
             </div>
           );
         })}

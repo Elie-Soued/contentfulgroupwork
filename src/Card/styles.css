@@ -10,8 +10,8 @@
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
-  margin: 2%;
-  padding: 1%;
+  margin: 5%;
+
   cursor: pointer;
 }
 .card:hover {
@@ -101,10 +101,10 @@
   position: absolute;
   bottom: 85%;
   left: 85%;
-  border-radius: 50%;
+  border-radius: 30%;
   background-color: rgba(43, 43, 43, 0.5);
   padding: 5%;
-  z-index: -1;
+  z-index: 1;
 }
 .favorite i {
   width: 100%;
@@ -120,10 +120,10 @@
   position: absolute;
   top: 85%;
   left: 85%;
-  border-radius: 50%;
+  border-radius: 30%;
   background-color: rgba(43, 43, 43, 0.5);
   padding: 5%;
-  z-index: -1;
+  z-index: 1;
 }
 .plus:hover {
   background-color: rgba(43, 43, 43, 0.822);
