@@ -204,3 +204,8 @@
       0px 10px 10px 0px rgba(255, 255, 255, 0.5);
   }
 }
+
+.info {
+  width: 500px;
+  height: 100%;
+}

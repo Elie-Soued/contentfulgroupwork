@@ -50,7 +50,6 @@ export default function BigCard({ url, enlarge, setEnlarge }) {
           </NavLink>
         </nav>
       </div>
-      <div className="info"></div>
     </div>
 
     //bigger Card
