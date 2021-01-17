@@ -45,24 +45,20 @@ useEffect(() => {
 
   return (
     <div className="container">
-      <div className="containerItem sideBar">
-        <div className="buttonsDivSidebar">
-          <Link className="button" to="/">
-            Get me Home
-          </Link>
-        </div>
-        <div className="buttonsDivSidebar">
-          <Link className="button" to="/ratingposts">
-            Get me Ratings
-          </Link>
-        </div>
-        <div className="buttonsDivSidebar">
-          <Link className="button" to="/allposts">
-            Get all posts
-          </Link>
-        </div>
+      <div className="sideBar">
+        <Link className="button" to="/">
+          Get me Home
+        </Link>
+
+        <Link className="button" to="/ratingposts">
+          Get me Ratings
+        </Link>
+
+        <Link className="button" to="/allposts">
+          Get all posts
+        </Link>
       </div>
-      <div className="containerItem mainContent">
+      <div className="mainContent">
         {pictures.map((iteration, index) => {
           return (
             <div key={index}>

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./styles.css";
+import BigCard from "../BigCard";
 
-export default function Card({url}) {
+export default function Card({ url }) {
+  const [enlarge, setEnlarge] = useState();
+  const picEnlargement = () => {
+    enlarge ? setEnlarge(false) : setEnlarge(true);
+  };
 
-
-
-  return (
+  return !enlarge ? (
     <div className="card">
       <div className="image">
         <img src={url} />
@@ -30,10 +33,16 @@ export default function Card({url}) {
           </ul>
         </div>
         <div className="plus">
-          <i class="fa fa-arrow-circle-o-right fa-3x" aria-hidden="true"></i>
+          <i
+            class="fa fa-expand fa-2x"
+            aria-hidden="true"
+            onClick={() => picEnlargement()}
+          ></i>
         </div>
       </div>
     </div>
+  ) : (
     //bigger Card
+    <BigCard url={url} />
   );
 }

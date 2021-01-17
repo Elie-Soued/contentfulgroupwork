@@ -2,13 +2,19 @@
   display: grid;
   grid-column-gap: 5%;
   grid-template-columns: 10% 80%;
-  margin: 1em;
+  margin: 1.5%;
 }
 
 .sideBar,
 .mainContent {
-  border: 5px solid black;
   text-align: center;
+}
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  z-index: 0;
 }
 
 /* .mainContent {
@@ -23,9 +29,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-}
-
-.buttonsDivSidebar {
-  height: 100px;
-  padding: 5%;
+  margin: 2%;
+  padding: 2% 5%;
+  border-radius: 5px;
 }
