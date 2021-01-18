@@ -19,6 +19,7 @@ export default function Card({
   const [enlarge, setEnlarge] = useState();
   const [info, setInfo] = useState();
   const [user, setUser] = useState();
+  const [btnActive, setBtnActive] = useState("navBttn");
 
   const picEnlargement = () => {
     enlarge ? setEnlarge(false) : setEnlarge(true);
@@ -28,9 +29,11 @@ export default function Card({
   const showInfo = () => {
     if (!info) {
       setInfo(true);
+      setBtnActive("navBttnActive");
       setUser(false);
     } else {
       setInfo(false);
+      setBtnActive("navBttn");
     }
   };
   const showUser = () => {
@@ -45,7 +48,7 @@ export default function Card({
   return !enlarge ? (
     <div className="card">
       <div className="image">
-        <img src={imageurl} />
+        <img src="https://picsum.photos/800/900" />
       </div>
 
       <div className="details">
@@ -77,12 +80,12 @@ export default function Card({
     //bigger Card
     <div className="bigCard">
       <div className="bigimage">
-        <img src={imageurl} />
+        <img src="https://picsum.photos/800/900" />
       </div>
       <div className="nav">
         <nav className="navBar">
           <button
-            className="navBttnActive"
+            className="navBttn"
             activeClassName="navBttnActive"
             onClick={() => showInfo()}
           >

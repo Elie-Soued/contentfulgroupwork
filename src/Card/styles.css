@@ -1,11 +1,12 @@
 /*regular Card*/
+body {
+}
 .card {
   border-radius: 10px;
   transform: translate(0%, 0%);
-  max-width: 500px;
-  max-height: 600px;
-  min-width: 15%;
-  min-height: auto;
+  max-width: 20em;
+
+  height: auto;
   background: #2424245b;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
