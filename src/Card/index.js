@@ -48,7 +48,7 @@ export default function Card({
   return !enlarge ? (
     <div className="card">
       <div className="image">
-        <img src="https://picsum.photos/800/900" />
+        <img src={imageurl} />
       </div>
 
       <div className="details">
@@ -80,7 +80,7 @@ export default function Card({
     //bigger Card
     <div className="bigCard">
       <div className="bigimage">
-        <img src="https://picsum.photos/800/900" />
+        <img src={imageurl} />
       </div>
       <div className="nav">
         <nav className="navBar">
