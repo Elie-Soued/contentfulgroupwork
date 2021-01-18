@@ -1,18 +1,24 @@
 /*regular Card*/
+body {
+}
 .card {
   border-radius: 10px;
   transform: translate(0%, 0%);
-  max-width: 360px;
-  max-height: 400px;
+  max-width: 20em;
+
+  height: auto;
   background: #2424245b;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
-  margin: 2%;
+  margin: 5%;
+
+  cursor: pointer;
 }
 .card:hover {
   -webkit-box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, 0.5);
   box-shadow: 5px 5px 15px 10px rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 .card .image {
   border-radius: 10px;
@@ -21,6 +27,7 @@
   overflow: hidden;
 }
 .card .image img {
+  border-radius: 10px;
   width: 100%;
   transition: 0.5s;
 }
@@ -69,10 +76,6 @@
   color: #ffffff;
 }
 .card .details .center ul {
-  position: absolute;
-  top: 100%;
-
-  margin: 10px auto 0;
   padding: 0;
   display: table;
 }
@@ -99,6 +102,10 @@
   position: absolute;
   bottom: 85%;
   left: 85%;
+  border-radius: 30%;
+  background-color: rgba(43, 43, 43, 0.5);
+  padding: 5%;
+  z-index: 1;
 }
 .favorite i {
   width: 100%;
@@ -114,9 +121,14 @@
   position: absolute;
   top: 85%;
   left: 85%;
+  border-radius: 30%;
+  background-color: rgba(43, 43, 43, 0.5);
+  padding: 5%;
+  z-index: 1;
+}
+.plus:hover {
+  background-color: rgba(43, 43, 43, 0.822);
 }
 .fa-plus-circle:hover {
   color: rgba(59, 143, 20, 0.274);
 }
-
-/* big Card */
