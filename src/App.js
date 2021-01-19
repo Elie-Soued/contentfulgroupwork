@@ -9,7 +9,7 @@ import NavBar from "./NavBar";
 function App() {
   return (
     <div className="App wrapper">
-      <Navbar />
+      <NavBar />
       <Switch>
         <Route path="/allposts">
           <AllPosts />
