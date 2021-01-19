@@ -9,12 +9,13 @@ import User from "./User";
 export default function Card({
   title,
   description,
-  userInfo,
+  userid,
   rating,
   imageurl,
   username,
   email,
   profilepic,
+
 }) {
   const [enlarge, setEnlarge] = useState();
   const [info, setInfo] = useState();
@@ -122,7 +123,7 @@ export default function Card({
       ) : (
         <></>
       )}
-      {user ? <User /> : <></>}
+      {user ? <User userid={userid} /> : <></>}
     </div>
   );
 }

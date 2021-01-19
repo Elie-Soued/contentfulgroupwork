@@ -6,7 +6,8 @@ import Card from "../Card";
 export default function AllPosts() {
   let [pictures, setPictures] = useState([]);
 
-  let testArray = ["1", "2", "3"];
+
+
 
   useEffect(() => {
     axios
@@ -14,51 +15,33 @@ export default function AllPosts() {
         "https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post"
       )
       .then((response) => {
-        const myArray = response.data.items;
         console.log(response.data.items);
         setPictures(response.data.items);
+
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  {
-    /*
-
-useEffect(() => {
-    const fetchAllPosts = async () => {
-      const posts = await axios
-        .get(
-          "https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post"
-        )
-        .then((result) => result.data);
-      return posts;
-    };
-    fetchAllPosts().then((res) => setPosts(res));
-  }, []);
-
-  console.log(posts);
-
-*/
-  }
 
   return (
-    <div className="container">
-      <div className="sideBar">
-        <Link className="button" to="/">
+    <div className='container'>
+      <header></header>
+      <div className='sideBar'>
+        <Link className='button' to='/'>
           Get me Home
         </Link>
 
-        <Link className="button" to="/ratingposts">
+        <Link className='button' to='/ratingposts'>
           Get me Ratings
         </Link>
 
-        <Link className="button" to="/allposts">
+        <Link className='button' to='/allposts'>
           Get all posts
         </Link>
       </div>
-      <div className="mainContent">
+      <div className='mainContent'>
         {pictures.map((iteration, index) => {
           console.log(iteration.fields);
           return (
@@ -66,12 +49,9 @@ useEffect(() => {
               <Card
                 title={iteration.fields.title}
                 description={iteration.fields.description}
-                userInfo={iteration.fields.user}
                 rating={iteration.fields.rating}
                 imageurl={iteration.fields.imageurl}
-                username
-                email
-                profilepic
+                userid={iteration.fields.user.sys.id}
               />
             </div>
           );

@@ -12,15 +12,6 @@ function App() {
 
   return (
     <div className='App wrapper'>
-
-
-
-
-
-
-
-
-
       <Switch>
         <Route path='/allposts'>
           <AllPosts />
