@@ -6,16 +6,12 @@ import Card from "../Card";
 export default function AllPosts() {
   let [pictures, setPictures] = useState([]);
 
-  let testArray = ["1", "2", "3"];
-
   useEffect(() => {
     axios
       .get(
         "https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post"
       )
       .then((response) => {
-        const myArray = response.data.items;
-        console.log(response.data.items);
         setPictures(response.data.items);
       })
       .catch((error) => {
@@ -23,28 +19,9 @@ export default function AllPosts() {
       });
   }, []);
 
-  {
-    /*
-
-useEffect(() => {
-    const fetchAllPosts = async () => {
-      const posts = await axios
-        .get(
-          "https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post"
-        )
-        .then((result) => result.data);
-      return posts;
-    };
-    fetchAllPosts().then((res) => setPosts(res));
-  }, []);
-
-  console.log(posts);
-
-*/
-  }
-
   return (
     <div className="container">
+      {/*
       <div className="sideBar">
         <Link className="button" to="/">
           Get me Home
@@ -58,6 +35,8 @@ useEffect(() => {
           Get all posts
         </Link>
       </div>
+      */}
+
       <div className="mainContent">
         {pictures.map((iteration, index) => {
           console.log(iteration.fields);
