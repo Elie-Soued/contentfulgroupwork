@@ -20,42 +20,23 @@ export default function AllPosts() {
   }, []);
 
   return (
-    <div className="container">
-      {/*
-      <div className="sideBar">
-        <Link className="button" to="/">
-          Get me Home
-        </Link>
-
-        <Link className="button" to="/ratingposts">
-          Get me Ratings
-        </Link>
-
-        <Link className="button" to="/allposts">
-          Get all posts
-        </Link>
-      </div>
-      */}
-
-      <div className="mainContent">
-        {pictures.map((iteration, index) => {
-          console.log(iteration.fields);
-          return (
-            <div key={index}>
-              <Card
-                title={iteration.fields.title}
-                description={iteration.fields.description}
-                userInfo={iteration.fields.user}
-                rating={iteration.fields.rating}
-                imageurl={iteration.fields.imageurl}
-                username
-                email
-                profilepic
-              />
-            </div>
-          );
-        })}
-      </div>
+    <div>
+      {pictures.map((iteration, index) => {
+        return (
+          <div key={index}>
+            <Card
+              title={iteration.fields.title}
+              description={iteration.fields.description}
+              userInfo={iteration.fields.user}
+              rating={iteration.fields.rating}
+              imageurl={iteration.fields.imageurl}
+              username
+              email
+              profilepic
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
