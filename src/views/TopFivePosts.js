@@ -24,10 +24,16 @@ export default function TopFivePosts() {
 
   return (
     <div className="mainContent">
-      {topRatedPictures.map((image, index) => {
+      {topRatedPictures.map((iteration, index) => {
         return (
           <div key={index}>
-            <Card imageurl={image.fields.imageurl} />
+            <Card
+              title={iteration.fields.title}
+              description={iteration.fields.description}
+              rating={iteration.fields.rating}
+              imageurl={iteration.fields.imageurl}
+              userid={iteration.fields.user.sys.id}
+            />
           </div>
         );
       })}
