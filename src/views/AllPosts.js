@@ -6,7 +6,9 @@ import Card from "../Card";
 export default function AllPosts() {
   let [pictures, setPictures] = useState([]);
   let [query, setQuery] = useState();
-  let [pictureSearch, setPictureSearch] = useState();
+  let [pictureSearch, setPictureSearch] = useState(false);
+  let [resultSearch, setResultSearch] = useState([]);
+
   useEffect(() => {
     axios
       .get(
@@ -15,6 +17,7 @@ export default function AllPosts() {
       .then((response) => {
         console.log(response.data.items);
         setPictures(response.data.items);
+        setPictureSearch(false)
       })
       .catch((error) => {
         console.log(error);
@@ -24,11 +27,14 @@ export default function AllPosts() {
   const search = () => {
     axios
       .get(
-        `https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post&fields.title[match]${query}`
+        `https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post&fields.title[match]=${query}`
       )
       .then((response) => {
         console.log(response.data.items);
-        setPictures(response.data.items);
+        setResultSearch(response.data.items);
+
+        setPictureSearch(true);
+        console.log(pictureSearch);
       })
       .catch((error) => {
         console.log(error);
@@ -37,31 +43,48 @@ export default function AllPosts() {
 
   return (
     <div>
-      <div className="">
+      <div className=''>
         <input
-          type="text"
-          placeholder="Search..."
+          type='text'
+          placeholder='Search...'
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="button" onClick={() => search()}>
+        <button className='button' onClick={() => search()}>
           Search
         </button>
+        <button onClick={() => setPictureSearch(false)}>Go Back</button>
       </div>
-      <div className="mainContent">
-        {pictures.map((iteration, index) => {
-          console.log(iteration.fields);
-          return (
-            <div key={index}>
-              <Card
-                title={iteration.fields.title}
-                description={iteration.fields.description}
-                rating={iteration.fields.rating}
-                imageurl={iteration.fields.imageurl}
-                userid={iteration.fields.user.sys.id}
-              />
-            </div>
-          );
-        })}
+
+      <div className='mainContent'>
+        {!pictureSearch
+          ? pictures.map((iteration, index) => {
+
+              return (
+                <div key={index}>
+                  <Card
+                    title={iteration.fields.title}
+                    description={iteration.fields.description}
+                    rating={iteration.fields.rating}
+                    imageurl={iteration.fields.imageurl}
+                    userid={iteration.fields.user.sys.id}
+                  />
+                </div>
+              );
+            })
+          : resultSearch.map((iteration, index) => {
+              return (
+                <div key={index}>
+                  <Card
+                    title={iteration.fields.title}
+                    description={iteration.fields.description}
+                    rating={iteration.fields.rating}
+                    imageurl={iteration.fields.imageurl}
+                    userid={iteration.fields.user.sys.id}
+                  />
+
+                </div>
+              );
+            })}
       </div>
     </div>
   );
