@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AllPosts from "./views/AllPosts.js";
@@ -10,16 +10,25 @@ function App() {
   return (
     <div className="">
       <header>
-        {" "}
-        <Link className="button" to="/topfiveposts">
-          Get me Ratings
-        </Link>
-        <Link className="button" to="/allposts">
-          Get all posts
-        </Link>
-        <Link className="button" to="/">
-          Home
-        </Link>
+        <nav>
+          <NavLink
+            className="button"
+            activeClassName="buttonActive"
+            to="/topfiveposts"
+          >
+            Get me Ratings
+          </NavLink>
+          <NavLink
+            className="button"
+            activeClassName="buttonActive"
+            to="/allposts"
+          >
+            Get all posts
+          </NavLink>
+          <NavLink className="button" to="/">
+            <i class="fa fa-home fa-2x"></i>
+          </NavLink>
+        </nav>
       </header>
       <div className="container">
         <Switch>
