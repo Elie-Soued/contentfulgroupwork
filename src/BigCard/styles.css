@@ -124,12 +124,12 @@
 }
 
 /* Nav & NavButtons */
-.nav {
+.bignav {
   height: 100%;
   width: auto;
   display: contents;
 }
-.navBar {
+.bignavBar {
   display: flex;
   flex-direction: column;
   width: auto;
@@ -139,7 +139,7 @@
   max-width: 55px;
 }
 
-.navBttn {
+.bignavBttn {
   color: black;
   background-color: grey;
   padding: 0;
@@ -150,7 +150,7 @@
   font-size: 2em;
   cursor: pointer;
 }
-.navBttnActive {
+.bignavBttnActive {
   color: white;
   background-color: black;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
@@ -175,12 +175,12 @@
     max-height: 95vh;
     align-content: flex-start;
   }
-  .nav {
+  .bignav {
     width: 100%;
     height: auto;
     display: contents;
   }
-  .navBar {
+  .bignavBar {
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -188,13 +188,13 @@
     max-width: 95vw;
     height: auto;
   }
-  .navBttn {
+  .bignavBttn {
     margin: 0 auto;
     min-width: 45px;
     min-height: 30px;
     padding: 0;
   }
-  .navBttnActive {
+  .bignavBttnActive {
     margin: 0 auto;
     min-width: 45px;
     min-height: 30px;

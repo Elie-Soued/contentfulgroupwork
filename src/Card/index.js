@@ -15,12 +15,11 @@ export default function Card({
   username,
   email,
   profilepic,
-
 }) {
   const [enlarge, setEnlarge] = useState();
   const [info, setInfo] = useState();
   const [user, setUser] = useState();
-  const [btnActive, setBtnActive] = useState("navBttn");
+  const [btnActive, setBtnActive] = useState("bignavBttn");
 
   const picEnlargement = () => {
     enlarge ? setEnlarge(false) : setEnlarge(true);
@@ -30,11 +29,11 @@ export default function Card({
   const showInfo = () => {
     if (!info) {
       setInfo(true);
-      setBtnActive("navBttnActive");
+      setBtnActive("bignavBttnActive");
       setUser(false);
     } else {
       setInfo(false);
-      setBtnActive("navBttn");
+      setBtnActive("bignavBttn");
     }
   };
   const showUser = () => {
@@ -83,37 +82,24 @@ export default function Card({
       <div className="bigimage">
         <img src={imageurl} />
       </div>
-      <div className="nav">
-        <nav className="navBar">
+      <div className="bignav">
+        <nav className="bignavBar">
           <button
-            className="navBttn"
-            activeClassName="navBttnActive"
+            className="bignavBttn"
+            activeClassName="bignavBttnActive"
             onClick={() => showInfo()}
           >
             <i class="fa fa-info"></i>
           </button>
           <button
-            className="navBttn"
-            activeClassName="navBttnActive"
+            className="bignavBttn"
+            activeClassName="bignavBttnActive"
             onClick={() => showUser()}
           >
             <i class="fa fa-user"></i>
           </button>
-          <button
-            className="navBttn"
-            activeClassName="navBttnActive"
-            to="/info"
-          >
-            <i class="fa fa-share-alt"></i>
-          </button>
-          <button
-            className="navBttn"
-            activeClassName="navBttnActive"
-            to="/info"
-          >
-            <i class="fa fa-thumbs-up"></i>
-          </button>
-          <button className="navBttn" onClick={() => picEnlargement()}>
+
+          <button className="bignavBttn" onClick={() => picEnlargement()}>
             <i class="fa fa-close"></i>
           </button>
         </nav>
