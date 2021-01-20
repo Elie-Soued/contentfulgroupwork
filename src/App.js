@@ -41,7 +41,11 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <footer>
+            Made by us
+      </footer>
     </div>
+
   );
 }
 

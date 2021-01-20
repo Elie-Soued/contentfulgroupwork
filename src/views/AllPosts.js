@@ -52,7 +52,8 @@ export default function AllPosts() {
         <button className='button' onClick={() => search()}>
           Search
         </button>
-        <button onClick={() => setPictureSearch(false)}>Go Back</button>
+        {pictureSearch ?  <button onClick={() => setPictureSearch(false)}>Go Back</button> : <></> }
+
       </div>
 
       <div className='mainContent'>
@@ -71,7 +72,9 @@ export default function AllPosts() {
                 </div>
               );
             })
-          : resultSearch.map((iteration, index) => {
+          :
+
+          resultSearch.map((iteration, index) => {
               return (
                 <div key={index}>
                   <Card
@@ -84,7 +87,11 @@ export default function AllPosts() {
 
                 </div>
               );
-            })}
+            }
+
+
+
+            )}
       </div>
     </div>
   );
