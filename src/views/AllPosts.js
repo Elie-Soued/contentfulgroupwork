@@ -12,6 +12,7 @@ export default function AllPosts() {
         "https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post"
       )
       .then((response) => {
+        console.log(response.data.items);
         setPictures(response.data.items);
       })
       .catch((error) => {
@@ -20,23 +21,23 @@ export default function AllPosts() {
   }, []);
 
   return (
-    <div>
-      {pictures.map((iteration, index) => {
-        return (
-          <div key={index}>
-            <Card
-              title={iteration.fields.title}
-              description={iteration.fields.description}
-              userInfo={iteration.fields.user}
-              rating={iteration.fields.rating}
-              imageurl={iteration.fields.imageurl}
-              username
-              email
-              profilepic
-            />
-          </div>
-        );
-      })}
+    <div className="container">
+      <div className="mainContent">
+        {pictures.map((iteration, index) => {
+          console.log(iteration.fields);
+          return (
+            <div key={index}>
+              <Card
+                title={iteration.fields.title}
+                description={iteration.fields.description}
+                rating={iteration.fields.rating}
+                imageurl={iteration.fields.imageurl}
+                userid={iteration.fields.user.sys.id}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
