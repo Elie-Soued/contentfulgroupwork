@@ -10,24 +10,29 @@ function App() {
   return (
     <div className="">
       <header>
-        <nav>
-          <NavLink
-            className="button"
-            activeClassName="buttonActive"
-            to="/topfiveposts"
-          >
-            Get me Ratings
+        <nav className="nav">
+          <NavLink className="button" to="/">
+            <i class="fa fa-home fa-2x"></i>
           </NavLink>
           <NavLink
             className="button"
             activeClassName="buttonActive"
             to="/allposts"
           >
-            Get all posts
+            All
           </NavLink>
-          <NavLink className="button" to="/">
-            <i class="fa fa-home fa-2x"></i>
+          <NavLink
+            className="button"
+            activeClassName="buttonActive"
+            to="/topfiveposts"
+          >
+            TOP 5
           </NavLink>
+          <span>Super Pinterest Clone</span>
+          <div className="">
+            <input type="text" placeholder="Search..." />
+            <button className="button">Search</button>
+          </div>
         </nav>
       </header>
       <div className="container">
