@@ -21,10 +21,8 @@ export default function AllPosts() {
   }, []);
 
   return (
-    <div className='container'>
-
-
-      <div className='mainContent'>
+    <div className="container">
+      <div className="mainContent">
         {pictures.map((iteration, index) => {
           console.log(iteration.fields);
           return (
