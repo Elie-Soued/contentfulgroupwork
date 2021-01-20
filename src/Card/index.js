@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "./styles.css";
-import "../BigCard/styles.css";
-import BigCard from "../BigCard";
+import "./bigstyles.css";
 import Info from "./Info";
 import User from "./User";
 

@@ -17,7 +17,7 @@ export default function AllPosts() {
       .then((response) => {
         console.log(response.data.items);
         setPictures(response.data.items);
-        setPictureSearch(false)
+        setPictureSearch(false);
       })
       .catch((error) => {
         console.log(error);
@@ -43,23 +43,25 @@ export default function AllPosts() {
 
   return (
     <div>
-      <div className=''>
+      <div className="">
         <input
-          type='text'
-          placeholder='Search...'
+          type="text"
+          placeholder="Search..."
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className='button' onClick={() => search()}>
+        <button className="button" onClick={() => search()}>
           Search
         </button>
-        {pictureSearch ?  <button onClick={() => setPictureSearch(false)}>Go Back</button> : <></> }
-
+        {pictureSearch ? (
+          <button onClick={() => setPictureSearch(false)}>Go Back</button>
+        ) : (
+          <></>
+        )}
       </div>
 
-      <div className='mainContent'>
+      <div className="mainContent">
         {!pictureSearch
           ? pictures.map((iteration, index) => {
-
               return (
                 <div key={index}>
                   <Card
@@ -72,9 +74,7 @@ export default function AllPosts() {
                 </div>
               );
             })
-          :
-
-          resultSearch.map((iteration, index) => {
+          : resultSearch.map((iteration, index) => {
               return (
                 <div key={index}>
                   <Card
@@ -84,14 +84,9 @@ export default function AllPosts() {
                     imageurl={iteration.fields.imageurl}
                     userid={iteration.fields.user.sys.id}
                   />
-
                 </div>
               );
-            }
-
-
-
-            )}
+            })}
       </div>
     </div>
   );
