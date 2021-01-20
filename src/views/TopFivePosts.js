@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import Card from "../Card";
 import axios from "axios";
+import "./styles.css";
 
 export default function TopFivePosts() {
   let [topRatedPictures, setTopRatedPictures] = useState([]);
@@ -22,7 +23,7 @@ export default function TopFivePosts() {
   }, []);
 
   return (
-    <div>
+    <div className="mainContent">
       {topRatedPictures.map((image, index) => {
         return (
           <div key={index}>

@@ -21,23 +21,21 @@ export default function AllPosts() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="mainContent">
-        {pictures.map((iteration, index) => {
-          console.log(iteration.fields);
-          return (
-            <div key={index}>
-              <Card
-                title={iteration.fields.title}
-                description={iteration.fields.description}
-                rating={iteration.fields.rating}
-                imageurl={iteration.fields.imageurl}
-                userid={iteration.fields.user.sys.id}
-              />
-            </div>
-          );
-        })}
-      </div>
+    <div className="mainContent">
+      {pictures.map((iteration, index) => {
+        console.log(iteration.fields);
+        return (
+          <div key={index}>
+            <Card
+              title={iteration.fields.title}
+              description={iteration.fields.description}
+              rating={iteration.fields.rating}
+              imageurl={iteration.fields.imageurl}
+              userid={iteration.fields.user.sys.id}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AllPosts from "./views/AllPosts.js";
 import TopFivePosts from "./views/TopFivePosts.js";
+import "./views/styles.css";
 // import LandingPage from "./views/LandingPage.js";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <div className="">
       <header>
         {" "}
-        <Link className="button" to="/ratingposts">
+        <Link className="button" to="/topfiveposts">
           Get me Ratings
         </Link>
         <Link className="button" to="/allposts">
@@ -20,15 +21,16 @@ function App() {
           Home
         </Link>
       </header>
-
-      <Switch>
-        <Route path="/allposts">
-          <AllPosts />
-        </Route>
-        <Route path="/topfiveposts">
-          <TopFivePosts />
-        </Route>
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route path="/allposts">
+            <AllPosts />
+          </Route>
+          <Route path="/topfiveposts">
+            <TopFivePosts />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }
