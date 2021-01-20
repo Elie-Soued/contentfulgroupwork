@@ -6,9 +6,6 @@ import Card from "../Card";
 export default function AllPosts() {
   let [pictures, setPictures] = useState([]);
 
-
-
-
   useEffect(() => {
     axios
       .get(
@@ -17,30 +14,16 @@ export default function AllPosts() {
       .then((response) => {
         console.log(response.data.items);
         setPictures(response.data.items);
-
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-
   return (
     <div className='container'>
-      <header></header>
-      <div className='sideBar'>
-        <Link className='button' to='/'>
-          Get me Home
-        </Link>
 
-        <Link className='button' to='/ratingposts'>
-          Get me Ratings
-        </Link>
 
-        <Link className='button' to='/allposts'>
-          Get all posts
-        </Link>
-      </div>
       <div className='mainContent'>
         {pictures.map((iteration, index) => {
           console.log(iteration.fields);
