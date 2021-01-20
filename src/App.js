@@ -29,10 +29,6 @@ function App() {
             TOP 5
           </NavLink>
           <span>Super Pinterest Clone</span>
-          <div className="">
-            <input type="text" placeholder="Search..." />
-            <button className="button">Search</button>
-          </div>
         </nav>
       </header>
       <div className="container">
