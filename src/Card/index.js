@@ -51,23 +51,17 @@ export default function Card({
       </div>
 
       <div className="details">
-        <span className="favorite">
-          <i className="fa fa-star fa-2x" aria-hidden="true"></i>
-        </span>
         <div className="center">
           <h1>{title}</h1>
           <p>{description}</p>
-          <ul>
-            <li>
-              <StarRatings
-                rating={rating}
-                starRatedColor="gold"
-                numberOfStars={5}
-                starDimension="20px"
-                starSpacing="0px"
-              />
-            </li>
-          </ul>
+
+          <StarRatings
+            rating={rating}
+            starRatedColor="gold"
+            numberOfStars={5}
+            starDimension="20px"
+            starSpacing="0px"
+          />
         </div>
         <div className="plus">
           <i
