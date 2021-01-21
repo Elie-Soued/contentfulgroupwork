@@ -10,10 +10,7 @@ export default function Card({
   description,
   userid,
   rating,
-  imageurl,
-  username,
-  email,
-  profilepic,
+  imageurl
 }) {
   const [enlarge, setEnlarge] = useState();
   const [info, setInfo] = useState();
@@ -51,27 +48,21 @@ export default function Card({
       </div>
 
       <div className="details">
-        <span className="favorite">
-          <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-        </span>
         <div className="center">
           <h1>{title}</h1>
           <p>{description}</p>
-          <ul>
-            <li>
-              <StarRatings
-                rating={rating}
-                starRatedColor="gold"
-                numberOfStars={5}
-                starDimension="20px"
-                starSpacing="0px"
-              />
-            </li>
-          </ul>
+
+          <StarRatings
+            rating={rating}
+            starRatedColor="gold"
+            numberOfStars={5}
+            starDimension="20px"
+            starSpacing="0px"
+          />
         </div>
         <div className="plus">
           <i
-            class="fa fa-expand fa-2x"
+            className="fa fa-expand fa-2x"
             aria-hidden="true"
             onClick={() => picEnlargement()}
           ></i>
@@ -91,18 +82,18 @@ export default function Card({
             activeClassName="bignavBttnActive"
             onClick={() => showInfo()}
           >
-            <i class="fa fa-info"></i>
+            <i className="fa fa-info"></i>
           </button>
           <button
             className="bignavBttn"
             activeClassName="bignavBttnActive"
             onClick={() => showUser()}
           >
-            <i class="fa fa-user"></i>
+            <i className="fa fa-user"></i>
           </button>
 
           <button className="bignavBttn" onClick={() => picEnlargement()}>
-            <i class="fa fa-close"></i>
+            <i className="fa fa-close"></i>
           </button>
         </nav>
       </div>
