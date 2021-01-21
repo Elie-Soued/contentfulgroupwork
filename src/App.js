@@ -28,9 +28,16 @@ function App() {
           >
             TOP 5
           </NavLink>
-          <span>Super Pinterest Clone</span>
+          <h1>Super Pinterest Clone</h1>
         </nav>
       </header>
+      <div>
+        <img
+          class="img"
+          src="https://pbs.twimg.com/profile_images/1104343124762132480/CP8KGorb.jpg"
+          alt="aria"
+        ></img>
+      </div>
       <div className="container">
         <Switch>
           <Route path="/allposts">
@@ -41,11 +48,8 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <footer>
-            Made by us
-      </footer>
+      <footer>Made by us</footer>
     </div>
-
   );
 }
 
