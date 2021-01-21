@@ -129,3 +129,8 @@
 .fa-plus-circle:hover {
   color: rgba(59, 143, 20, 0.274);
 }
+
+.widget-svg svg {
+  width: 20px;
+  height: 20px;
+}

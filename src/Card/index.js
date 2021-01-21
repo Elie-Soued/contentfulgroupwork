@@ -3,6 +3,7 @@ import "./styles.css";
 import "./bigstyles.css";
 import Info from "./Info";
 import User from "./User";
+import StarRatings from "react-star-ratings";
 
 export default function Card({
   title,
@@ -58,10 +59,13 @@ export default function Card({
           <p>{description}</p>
           <ul>
             <li>
-              <span>by: {username}</span>
-            </li>
-            <li>
-              <span>Rating: {rating}</span>
+              <StarRatings
+                rating={rating}
+                starRatedColor="gold"
+                numberOfStars={5}
+                starDimension="20px"
+                starSpacing="0px"
+              />
             </li>
           </ul>
         </div>

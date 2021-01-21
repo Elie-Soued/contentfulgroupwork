@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import StarRatings from "react-star-ratings";
 
 export default function Info({ title, description, rating }) {
   return (
@@ -20,12 +21,16 @@ export default function Info({ title, description, rating }) {
             <td>{description}</td>
           </tr>
           <tr>
-            <td>UserProfilePic</td>
-            <td>Username</td>
-          </tr>
-          <tr>
             <td>Rating</td>
-            <td>{rating}</td>
+            <td>
+              <StarRatings
+                rating={rating}
+                starRatedColor="gold"
+                numberOfStars={5}
+                starDimension="30px"
+                starSpacing="0px"
+              />
+            </td>
           </tr>
         </tbody>
       </table>
