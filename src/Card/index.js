@@ -10,10 +10,7 @@ export default function Card({
   description,
   userid,
   rating,
-  imageurl,
-  username,
-  email,
-  profilepic,
+  imageurl
 }) {
   const [enlarge, setEnlarge] = useState();
   const [info, setInfo] = useState();
