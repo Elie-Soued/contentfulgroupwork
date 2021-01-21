@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles.css";
 
-export default function User({userid}) {
-
+export default function User({ userid }) {
   let [users, setUsers] = useState([]);
 
   console.log(userid);
@@ -22,46 +21,33 @@ export default function User({userid}) {
       });
   }, []);
 
-
   return (
     <div className="info">
       <table>
         <thead>
           <tr>
-            <th>Info</th>
+            <th>User Info</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>UserProfilePic</td>
             {users.map((user) => {
               return (
-                <td key={user.id}><img src={user.fields.profilePicture} alt={''} /></td>
-              )
+                <td className="profilePic" key={user.id}>
+                  <img src={user.fields.profilePicture} alt={""} />
+                </td>
+              );
             })}
           </tr>
           <tr>
-            <td>UserName</td>
             {users.map((user) => {
-              return (
-                <td key={user.id}>{user.fields.username}</td>
-              )
+              return <td key={user.id}>{user.fields.username}</td>;
             })}
           </tr>
           <tr>
-
-            <td>E-Mail</td>
-
-               {users.map((user) => {
-              return (
-                <td key={user.id}>{user.fields.email}</td>
-
-              )
+            {users.map((user) => {
+              return <td key={user.id}>{user.fields.email}</td>;
             })}
-
-
-
-
           </tr>
         </tbody>
       </table>
