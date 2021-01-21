@@ -1,7 +1,7 @@
 # **ToDoList - Introduction**
 
 This App fetches Data from the CMS Contentful.
-[Github Pages](https://olkhon.github.io/contentfulgroupwork/)
+[Github Pages]( https://elie-soued.github.io/contentfulgroupwork/)
 
 ## **Table of Contents**
 
