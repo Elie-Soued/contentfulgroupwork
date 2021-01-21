@@ -48,12 +48,15 @@
   transform: perspective(2000px) rotateY(0deg);
 }
 .card .details .center {
-  padding: 20px;
+  padding: 0;
+  margin: auto;
   text-align: center;
   /* background: #fff; */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
 }
 .card .details .center h1 {
   margin: 0;
