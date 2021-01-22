@@ -1,22 +1,23 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../Card";
 
 export default function AllPosts() {
   let [pictures, setPictures] = useState([]);
+  let [users, setUsers] = useState([]);
   let [query, setQuery] = useState();
   let [pictureSearch, setPictureSearch] = useState(false);
   let [resultSearch, setResultSearch] = useState([]);
 
-  useEffect(() => {
-    axios
+  useEffect(async () => {
+    await axios
       .get(
         "https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post"
       )
       .then((response) => {
-        console.log(response.data.items);
         setPictures(response.data.items);
+        setUsers(response.data.includes.Entry);
+
         setPictureSearch(false);
       })
       .catch((error) => {
@@ -40,7 +41,7 @@ export default function AllPosts() {
         console.log(error);
       });
   };
-
+  console.log(users);
   return (
     <div>
       <div className="">
@@ -70,6 +71,7 @@ export default function AllPosts() {
                     rating={iteration.fields.rating}
                     imageurl={iteration.fields.imageurl}
                     userid={iteration.fields.user.sys.id}
+                    users={users}
                   />
                 </div>
               );
@@ -83,6 +85,7 @@ export default function AllPosts() {
                     rating={iteration.fields.rating}
                     imageurl={iteration.fields.imageurl}
                     userid={iteration.fields.user.sys.id}
+                    users={users}
                   />
                 </div>
               );

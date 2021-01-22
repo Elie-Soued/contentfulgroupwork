@@ -12,14 +12,16 @@ body {
   background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.landing {
+  text-align: center;
+}
+.landingImg {
+  display: block;
+  margin: auto;
+  width: 45%;
 }
 
-.img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+footer {
+  position: fixed;
+  bottom: 0;
 }
