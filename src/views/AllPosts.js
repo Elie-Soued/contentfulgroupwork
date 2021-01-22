@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../Card";
@@ -9,14 +8,14 @@ export default function AllPosts() {
   let [pictureSearch, setPictureSearch] = useState(false);
   let [resultSearch, setResultSearch] = useState([]);
 
-  useEffect(() => {
-    axios
+  useEffect(async () => {
+    await axios
       .get(
         "https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=post"
       )
       .then((response) => {
-        console.log(response.data.items);
         setPictures(response.data.items);
+        console.log(response.data);
         setPictureSearch(false);
       })
       .catch((error) => {

@@ -2,25 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles.css";
 
-export default function User({ userid }) {
-  let [users, setUsers] = useState([]);
-
-  console.log(userid);
-
-  useEffect(() => {
-    axios
-      .get(
-        `https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=user&sys.id[match]=${userid}`
-      )
-      .then((response) => {
-        setUsers(response.data.items);
-        console.log(users);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
+export default function User({ username, email, profilePicture }) {
   return (
     <div className="info">
       <table>
@@ -31,23 +13,15 @@ export default function User({ userid }) {
         </thead>
         <tbody>
           <tr>
-            {users.map((user) => {
-              return (
-                <td className="profilePic" key={user.id}>
-                  <img src={user.fields.profilePicture} alt={""} />
-                </td>
-              );
-            })}
+            <td className="profilePic">
+              <img src={profilePicture} alt={""} />
+            </td>
           </tr>
           <tr>
-            {users.map((user) => {
-              return <td key={user.id}>{user.fields.username}</td>;
-            })}
+            <td>{username}</td>
           </tr>
           <tr>
-            {users.map((user) => {
-              return <td key={user.id}>{user.fields.email}</td>;
-            })}
+            <td>{email}</td>
           </tr>
         </tbody>
       </table>

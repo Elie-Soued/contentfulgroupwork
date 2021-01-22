@@ -1,22 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import "./bigstyles.css";
 import Info from "./Info";
 import User from "./User";
 import StarRatings from "react-star-ratings";
+import axios from "axios";
 
 export default function Card({
   title,
   description,
   userid,
   rating,
-  imageurl
+  imageurl,
+  users,
+  setUsers,
+  username,
+  email,
+  profilePicture,
 }) {
   const [enlarge, setEnlarge] = useState();
   const [info, setInfo] = useState();
   const [user, setUser] = useState();
+  const [userInfo, setUserInfo] = useState([]);
   const [btnActive, setBtnActive] = useState("bignavBttn");
-
+  useEffect(async () => {
+    await axios
+      .get(
+        `https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=user&sys.id[match]=${userid}`
+      )
+      .then((response) => {
+        setUserInfo(response.data.items);
+        console.log(response.data.items);
+        console.log(userInfo[0].fields.username);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   const picEnlargement = () => {
     enlarge ? setEnlarge(false) : setEnlarge(true);
     setInfo(false);
@@ -64,7 +84,9 @@ export default function Card({
           <i
             className="fa fa-expand fa-2x"
             aria-hidden="true"
-            onClick={() => picEnlargement()}
+            onClick={() => {
+              picEnlargement();
+            }}
           ></i>
         </div>
       </div>
@@ -99,10 +121,15 @@ export default function Card({
       </div>
       {info ? (
         <Info title={title} description={description} rating={rating} />
-      ) : (
-        <></>
-      )}
-      {user ? <User userid={userid} /> : <></>}
+      ) : null}
+      {user ? (
+        <User
+          userid={userid}
+          username={userInfo[0].fields.username}
+          email={userInfo[0].fields.email}
+          profilePicture={userInfo[0].fields.profilePicture}
+        />
+      ) : null}
     </div>
   );
 }
