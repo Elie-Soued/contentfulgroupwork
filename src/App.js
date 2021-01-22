@@ -47,7 +47,7 @@ function App() {
                 src="https://pbs.twimg.com/profile_images/1104343124762132480/CP8KGorb.jpg"
                 alt="aria"
               ></img>
-              <p>You have encountered the rare french Gopnik</p>
+              <p>You have been blessed by the rare french Gopnik</p>
             </div>
           </Route>
         </Switch>

@@ -4,7 +4,6 @@ import Card from "../Card";
 
 export default function AllPosts() {
   let [pictures, setPictures] = useState([]);
-  let [users, setUsers] = useState([]);
   let [query, setQuery] = useState();
   let [pictureSearch, setPictureSearch] = useState(false);
   let [resultSearch, setResultSearch] = useState([]);
@@ -16,8 +15,7 @@ export default function AllPosts() {
       )
       .then((response) => {
         setPictures(response.data.items);
-        setUsers(response.data.includes.Entry);
-
+        console.log(response.data);
         setPictureSearch(false);
       })
       .catch((error) => {
@@ -41,7 +39,7 @@ export default function AllPosts() {
         console.log(error);
       });
   };
-  console.log(users);
+
   return (
     <div>
       <div className="">
@@ -71,7 +69,6 @@ export default function AllPosts() {
                     rating={iteration.fields.rating}
                     imageurl={iteration.fields.imageurl}
                     userid={iteration.fields.user.sys.id}
-                    users={users}
                   />
                 </div>
               );
@@ -85,7 +82,6 @@ export default function AllPosts() {
                     rating={iteration.fields.rating}
                     imageurl={iteration.fields.imageurl}
                     userid={iteration.fields.user.sys.id}
-                    users={users}
                   />
                 </div>
               );
