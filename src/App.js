@@ -1,5 +1,4 @@
 import { Route, NavLink, Switch } from "react-router-dom";
-
 import React from "react";
 import AllPosts from "./views/AllPosts.js";
 import TopFivePosts from "./views/TopFivePosts.js";
