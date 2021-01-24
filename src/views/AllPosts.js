@@ -48,11 +48,16 @@ export default function AllPosts() {
           placeholder="Search..."
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="button" onClick={() => search()}>
+        <button className="searchButton" onClick={() => search()}>
           Search
         </button>
         {pictureSearch ? (
-          <button onClick={() => setPictureSearch(false)}>Go Back</button>
+          <button
+            className="backButton"
+            onClick={() => setPictureSearch(false)}
+          >
+            Back
+          </button>
         ) : (
           <></>
         )}
