@@ -52,7 +52,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <footer>Made by us</footer>
+      <footer>Weekly Project made for WBS Coding School</footer>
     </div>
   );
 }
