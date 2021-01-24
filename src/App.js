@@ -2,34 +2,40 @@ import { Route, NavLink, Switch } from "react-router-dom";
 import React from "react";
 import AllPosts from "./views/AllPosts.js";
 import TopFivePosts from "./views/TopFivePosts.js";
+import NavBar from "./NavBar";
 import "./views/styles.css";
 // import LandingPage from "./views/LandingPage.js";
 
 function App() {
   return (
     <div className="">
-      <header>
-        <nav className="nav">
-          <NavLink className="button" to="/">
-            <i class="fa fa-home fa-2x"></i>
-          </NavLink>
-          <NavLink
-            className="button"
-            activeClassName="buttonActive"
-            to="/allposts"
-          >
-            All
-          </NavLink>
-          <NavLink
-            className="button"
-            activeClassName="buttonActive"
-            to="/topfiveposts"
-          >
-            TOP 5
-          </NavLink>
-          <h1>Super Pinterest Clone</h1>
-        </nav>
-      </header>
+      {/*
+
+  <header>
+    <nav className="nav">
+      <NavLink className="button" to="/">
+        <i class="fa fa-home fa-2x"></i>
+      </NavLink>
+      <NavLink
+        className="button"
+        activeClassName="buttonActive"
+        to="/allposts"
+      >
+        All
+      </NavLink>
+      <NavLink
+        className="button"
+        activeClassName="buttonActive"
+        to="/topfiveposts"
+      >
+        TOP 5
+      </NavLink>
+      <h1>Super Pinterest Clone</h1>
+    </nav>
+  </header>
+
+  */}
+      <NavBar />
 
       <div className="container">
         <Switch>
