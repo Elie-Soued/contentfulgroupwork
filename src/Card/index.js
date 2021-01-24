@@ -114,7 +114,7 @@ export default function Card({
             <i className="fa fa-user"></i>
           </button>
 
-          <button className="bignavBttn" onClick={() => picEnlargement()}>
+          <button className="bignavBttn close" onClick={() => picEnlargement()}>
             <i className="fa fa-close"></i>
           </button>
         </nav>
