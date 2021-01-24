@@ -52,7 +52,8 @@ In the project we used different sources for problem-solving e.g.:
 
 1. [MDN Docs](https://developer.mozilla.org/en-US/)
 2. [Contentful Endpoint requests](https://docs.google.com/spreadsheets/d/1mJlL5T-NagJXHo7LklotTyVHoiBrj_1pbqGnqxyDdZc/edit?usp=sharing)
-3.
+3. [Contentful Docs](https://www.contentful.com/developers/docs/)
+4. [React Docs](https://reactjs.org/docs/getting-started.html)
 
 ## Outlook
 
