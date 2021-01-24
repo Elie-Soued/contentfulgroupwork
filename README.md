@@ -24,8 +24,8 @@ The project was planned, designed and implemented by Stefan, Elie, Andi and Alex
 
 ---
 
-For the organization and distribution of task we used a Trelloboard that may be found here. For team communication we used Discord and Google Meet.
-The version control of our code has been done with the helf of git and github.
+For the organization and distribution of task we used a Trelloboard. For team communication we used Discord and Google Meet.
+The version control of our code has been done with the help of git and github.
 
 ## Functionality
 
