@@ -1,4 +1,4 @@
-# **ToDoList - Introduction**
+# **Super Pinterest Clone - Introduction**
 
 This app aims to imitate a pinterest user experience. The deployed version may be viewed here:
 [Github Pages]( https://elie-soued.github.io/contentfulgroupwork/)
