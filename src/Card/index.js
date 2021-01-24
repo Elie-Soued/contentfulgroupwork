@@ -23,15 +23,14 @@ export default function Card({
   const [user, setUser] = useState();
   const [userInfo, setUserInfo] = useState([]);
   const [btnActive, setBtnActive] = useState("bignavBttn");
-  useEffect(async () => {
-    await axios
+  useEffect(() => {
+    axios
       .get(
         `https://cdn.contentful.com/spaces/8fv8p8zq5nhk/environments/master/entries?access_token=2Kxs5ywkZC4G2_BlVcVViNwuADQfYgS90gfRRS85QUY&content_type=user&sys.id[match]=${userid}`
       )
       .then((response) => {
         setUserInfo(response.data.items);
-        console.log(response.data.items);
-        console.log(userInfo[0].fields.username);
+        console.log(userInfo);
       })
       .catch((error) => {
         console.log(error);
@@ -122,14 +121,7 @@ export default function Card({
       {info ? (
         <Info title={title} description={description} rating={rating} />
       ) : null}
-      {user ? (
-        <User
-          userid={userid}
-          username={userInfo[0].fields.username}
-          email={userInfo[0].fields.email}
-          profilePicture={userInfo[0].fields.profilePicture}
-        />
-      ) : null}
+      {user ? <User userid={userid} /> : null}
     </div>
   );
 }
