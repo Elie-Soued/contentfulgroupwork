@@ -8,6 +8,7 @@ This app aims to imitate a pinterest user experience. The deployed version may b
 ---
 
 - [Contributors](#Contributors)
+- [Project Management](#Trelloboard)
 - [Functionality](#Functionality)
 - [Technologies](#Technologies)
 - [Sources](#Sources)
@@ -18,6 +19,13 @@ This app aims to imitate a pinterest user experience. The deployed version may b
 ---
 
 The project was planned, designed and implemented by Stefan, Elie, Andi and Alex.
+
+## Project Management
+
+---
+
+For the organization and distribution of task we used a Trelloboard that may be found here. For team communication we used Discord and Google Meet.
+The version control of our code has been done with the helf of git and github.
 
 ## Functionality
 
