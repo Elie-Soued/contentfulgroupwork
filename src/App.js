@@ -9,32 +9,6 @@ import "./views/styles.css";
 function App() {
   return (
     <div className="">
-      {/*
-
-  <header>
-    <nav className="nav">
-      <NavLink className="button" to="/">
-        <i class="fa fa-home fa-2x"></i>
-      </NavLink>
-      <NavLink
-        className="button"
-        activeClassName="buttonActive"
-        to="/allposts"
-      >
-        All
-      </NavLink>
-      <NavLink
-        className="button"
-        activeClassName="buttonActive"
-        to="/topfiveposts"
-      >
-        TOP 5
-      </NavLink>
-      <h1>Super Pinterest Clone</h1>
-    </nav>
-  </header>
-
-  */}
       <NavBar />
 
       <div className="container">
@@ -52,7 +26,6 @@ function App() {
                 src="https://pbs.twimg.com/profile_images/1104343124762132480/CP8KGorb.jpg"
                 alt="aria"
               ></img>
-              <p>You have been blessed by the rare french Gopnik</p>
             </div>
           </Route>
         </Switch>
