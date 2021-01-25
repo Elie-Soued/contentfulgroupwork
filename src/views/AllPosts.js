@@ -31,7 +31,7 @@ export default function AllPosts() {
       .then((response) => {
         console.log(response.data.items);
         setResultSearch(response.data.items);
-
+        console.log(resultSearch);
         setPictureSearch(true);
         console.log(pictureSearch);
       })

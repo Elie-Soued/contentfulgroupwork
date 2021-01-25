@@ -1,0 +1,18 @@
+* {
+  font-family: "Hachi Maru Pop", cursive;
+}
+
+h1 {
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+  height: auto;
+}
+
+h2 {
+  text-decoration: none;
+}
