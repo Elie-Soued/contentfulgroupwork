@@ -24,7 +24,7 @@ export default function NavBar() {
           activeClassName="buttonActive"
           to="/topfiveposts"
         >
-          TOP 5
+          TOP RATED
         </NavLink>
       </nav>
     </div>
