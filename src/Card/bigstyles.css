@@ -194,6 +194,14 @@
     min-height: 30px;
     padding: 0;
   }
+  .bignavBttn:hover {
+    color: white;
+    background-color: black;
+  }
+  .close:hover {
+    color: white;
+    background-color: red;
+  }
   .bignavBttnActive {
     margin: 0 auto;
     min-width: 45px;

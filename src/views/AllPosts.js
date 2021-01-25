@@ -48,11 +48,16 @@ export default function AllPosts() {
           placeholder="Search..."
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="button" onClick={() => search()}>
+        <button className="searchButton" onClick={() => search()}>
           Search
         </button>
         {pictureSearch ? (
-          <button onClick={() => setPictureSearch(false)}>Go Back</button>
+          <button
+            className="backButton"
+            onClick={() => setPictureSearch(false)}
+          >
+            Back
+          </button>
         ) : (
           <></>
         )}
@@ -73,15 +78,15 @@ export default function AllPosts() {
                 </div>
               );
             })
-          : resultSearch.map((iteration, index) => {
+          : resultSearch.map((it, i) => {
               return (
-                <div key={index}>
+                <div key={i}>
                   <Card
-                    title={iteration.fields.title}
-                    description={iteration.fields.description}
-                    rating={iteration.fields.rating}
-                    imageurl={iteration.fields.imageurl}
-                    userid={iteration.fields.user.sys.id}
+                    title={it.fields.title}
+                    description={it.fields.description}
+                    rating={it.fields.rating}
+                    imageurl={it.fields.imageurl}
+                    userid={it.fields.user.sys.id}
                   />
                 </div>
               );

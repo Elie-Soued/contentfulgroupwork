@@ -6,11 +6,6 @@ export default function Info({ title, description, rating }) {
   return (
     <div className="info">
       <table>
-        <thead>
-          <tr>
-            <th>Info</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td>Title</td>
